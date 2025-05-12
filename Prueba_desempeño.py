@@ -62,7 +62,7 @@ def delete_products(): # Function to delete the product
 
 def total_value(): # Function to display the total value in the inventory
     total = sum(product["price"] * product["amount"] for product in inventary)
-    print(f"Total inventory value: {total:.2f}")
+    print(f"Total Inventory value: {total:.2f}")
 
 def show_menu(): # Function to display the options menu
     print("\n--- Store Inventory Management ---")
