@@ -41,7 +41,7 @@ print("endswith:", texto9.endswith("on"))     # True
 texto10 = "hola mundo"
 print("find:", texto10.find("mundo"))   # 5
 print("find (no encontrado):", texto10.find("x"))  # -1
-# print("index:", texto10.index("x"))  # Esto lanza un error si no existe
+# print("index:", texto10.index("x"))  # Descomenta para ver el error: ValueError si no se encuentra
 
 # 11. isdigit e isalpha
 texto11a = "123"
