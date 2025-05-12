@@ -1,18 +1,28 @@
 # System inventory management
 Inventary = [] # Initial product list
+def add_product():#Function to add product 
+    count = 0
+    while True:
+        print(f"\nAdding product {count + 1}:")
+        name = input("Enter the product name: ").strip()
+        try:
+            price = float(input("Enter the product price: "))
+            amount = int(input("Enter the quantity of products: "))
+            if price <= 0 or amount < 0:
+                print("The price must be positive and the quantity cannot be negative.")
+                continue  # Reintenta este mismo producto
+            Inventary.append({"Name": name, "Price": price, "Amount": amount})
+            print(f"Product '{name}' added successfully.")
+            count += 1
+        except ValueError:
+            print("Invalid input. Please enter valid numbers for price and quantity.")
+            continue
 
-def add_product(): #Function to add product
-    name = input("Enter the product name: ").strip()
-    try:
-        price = float(input("Enter the product price: "))
-        amount = int(input("Enter the quantity of products: "))
-        if price <= 0 or amount < 0:
-            print("The price must be positive and the quantity cannot be negative.")
-            return
-        Inventary.append({"Name": name, "Price": price, "Amount": amount})
-        print(f"Product '{name}' added successfully.")
-    except ValueError:
-        print("Invalid input. Price must be a number and quantity must be an integer.")
+        if count >= 4:
+            more = input("Do you want to add another product? (yes/no): ").strip().lower()
+            if more != 'yes':
+                break
+
 
         
 def search_product(): #Function to search product
