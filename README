@@ -8,7 +8,7 @@ Nombre del producto
 Precio del producto (debe ser un número positivo)
 Cantidad (debe ser un número entero positivo)
 
-![Image_Alt](https://github.com/Dagor07/Semana-3/blob/6806f72a060e2331423fa2702a075664ba519bba/Captura%20desde%202025-05-12%2017-43-01.png)
+![Image Alt](https://github.com/Dagor07/Semana-3/blob/6806f72a060e2331423fa2702a075664ba519bba/Captura%20desde%202025-05-12%2017-43-01.png)
 
 Si los datos son válidos, el producto se guarda en una lista llamada Inventary.
 
