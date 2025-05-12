@@ -7,7 +7,8 @@ El sistema solicita al usuario:
 Nombre del producto
 Precio del producto (debe ser un número positivo)
 Cantidad (debe ser un número entero positivo)
-![Image](https://github.com/user-attachments/assets/7cecac9c-4408-40d0-9fcf-dcc222124a3a)
+<a href="![Image](https://github.com/user-attachments/assets/7cecac9c-4408-40d0-9fcf-dcc222124a3a)">![Image](https://github.com/user-attachments/assets/7cecac9c-4408-40d0-9fcf-dcc222124a3a)</a>
+
 Si los datos son válidos, el producto se guarda en una lista llamada Inventary.
 
 
