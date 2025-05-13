@@ -1,4 +1,4 @@
-#import os #Clears the console when running
+import os #Clears the console when running
 os.system("cls" if os.name == "nt" else "clear")
 
 # System inventory management
@@ -42,26 +42,32 @@ def update_price(): # Function to update the product price
         if product["Name"].lower() == name.lower():
             try:
                 new_price = float(input("Enter the new price: "))
+                new_amount = int(input("Enter the new amount: "))
                 if new_price <= 0:
                     print("The price must be a positive number.")
                     return
+                if new_price <=0:
+                    print("To remove a product its quantity must be equal to 0")
+                    return
                 product["Price"] = new_price
+                product["Amount"] = new_amount
                 print(f"Product price '{name}' update successfully.")
                 return
             except ValueError:
-                print("Invalid price. Must be a number..")
+                print("Invalid price. Must be a number.")
                 return
     print(f"The product'{product}' doesn't exist in inventory.")
+    
 
     
 def delete_products(): # Function to delete the product
     name = input("Enter the product to delete: ").strip()
     for product in Inventary:
-        if product["Name"].lower() == name.lower():
+        if product["Name"].lower() == name.lower() and product["Amount"] == 0:
             Inventary.remove(product)
             print(f"Product '{name}' was delete to inventary.")
             return
-    print(f"The product '{name}' doesn't exist in inventory.")
+    print(f"The product '{name}' does not have a quantity of 0 to be deleted.")
 
 def total_value(): # Function to display the total value in the inventory
     total = sum(product["Price"] * product["Amount"] for product in Inventary)
@@ -75,8 +81,8 @@ def show_menu(): # Function to display the options menu
     print("\n--- Store Inventory Management ---")
     print("1. Add new product")
     print("2. Search the product")
-    print("3. Update the product price")
-    print("4. Delete the product")
+    print("3. Update the product price and the product quantity")
+    print("4. Delete the product (if the quantity is 0)")
     print("5. Display the total value in the inventory ")
     print("6. Show the inventory")
     print("7. Exit")
